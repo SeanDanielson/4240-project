@@ -2,7 +2,7 @@
 #compile code
 python3 main.py &
 #run code
-COMMAND=""
+COMMAND="python3"
 if [pgrep -x "$COMMAND"]
 then
   killall COMMAND
