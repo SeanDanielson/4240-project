@@ -4,7 +4,8 @@ from scapy.layers.inet import IP, TCP
 
 def print_and_accept(pkt):
     packet = scapy.IP(pkt.get_payload())
-    if packet.haslayer(TCP) and (packet[TCP].sport == 80 or packet[TCP].dport == 80):
+    if packet.haslayer(TCP) and (packet[TCP].sport == 443 or packet[TCP].dport == 443):
+        print("test")
         pkt.drop()
     else:
         pkt.accept()
