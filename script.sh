@@ -3,7 +3,7 @@
 python3 main.py &
 #run code
 COMMAND="python3"
-if [pgrep -x "$COMMAND"]
+if [pgrep -x $COMMAND]
 then
   killall COMMAND
   sudo iptables -F
