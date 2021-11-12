@@ -8,7 +8,7 @@ then
   killall $COMMAND
   sudo iptables -F
 else
-  IPADDRESS=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
+  IPADDRESS=$(hostname -I)
   iptables -I FORWARD -d $IPADDRESS/24 -j NFQUEUE --queue-num 1
   python3 main.py &
 fi
